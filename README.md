@@ -1,4 +1,4 @@
-# FamilyMapServerStudent
+# Family Map Server
 
 - Refer to the <b>How To Get Started</b> document on the <b>Family Map Server Program Assignment</b> for more detailed instructions and help with common issues. 
 
