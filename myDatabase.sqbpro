@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="/Users/kwintonhoching/Desktop/BYU/Winter 2023/CS 240/IdeaProjects/FamilyMapServer/myDatabase.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="0"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1442"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,9:mainauthtoken"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1">drop table if exists user;
+drop table if exists person;
+drop table if exists event;
+drop table if exists authtoken;
+
+create table user
+(
+	username varchar(255) not null primary key,
+	password varchar(255) not null,
+	email varchar(255) not null,
+	firstName varchar(255) not null,
+	lastName varchar(255) not null,
+	gender varchar(1) not null,
+	personID varchar(255) not null
+);
+
+create table person
+(
+	personID varchar(255) not null primary key,
+	associatedUsername  varchar(255) not null,
+	firstName varchar(255) not null,
+	lastName varchar(255) not null,
+	gender varchar(1) not null,
+	fatherID varchar(255),
+	motherID varchar(255),
+	spouseID varchar(255)
+);
+
+create table event
+(
+	eventID varchar(255) not null primary key,
+	associatedUsername varchar(255) not null,
+	personID varchar(255) not null,
+	latitude float  not null,
+	longitude float not null,
+	country varchar(255) not null,
+	city varchar(255) not null,
+	eventType varchar(255) not null,
+	year integer not null
+);
+
+create table authtoken
+(
+	authtoken varchar(255) not null primary key,
+	username varchar(255) not null
+);
+
+
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
